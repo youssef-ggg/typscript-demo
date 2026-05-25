@@ -53,7 +53,7 @@ Open the newly created .env file and adjust the configuration parameters (such a
 
 You can adjust the number of customers in the `TOTAL_REQUESTS=200` and the number of available seats in the `SEATS_NUM=10`
 
-### What this project missed
+# What this project missed
 
 ## message broker 
 
@@ -61,7 +61,7 @@ It would have been better if we added a message broker like rabbitMQ rather then
 
 ## eager loading 
 
-I would have rather loaded all the seats to the cache even before the first customer has requested a seat also to make all the parallel requests compelety detached from what was happening in the database and I can write to the database using it's own pace this solution could have been paried with a message broker to make the cache handle the parallel requests entirely 
+I would have rather loaded all the seats to the cache even before the first customer has requested a seat to make all the parallel requests detached from what is happening in the database and I can write to the database using it's own pace this solution could have been paired with a message broker to make the cache handle the parallel requests entirely. 
 
 
 
