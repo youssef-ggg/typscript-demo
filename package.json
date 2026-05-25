@@ -1,0 +1,38 @@
+{
+   "name": "tickets",
+   "version": "1.0.0",
+   "main": "index.js",
+   "type": "module",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "seed": "tsx seed.ts",
+      "start": "tsx index.ts",
+      "start:cluster": "tsx primary.ts",
+      "start:cluster:cold": "rm -f tickets.sqlite && valkey-cli FLUSHALL && npm run seed && npm run start:cluster",
+      "start:pm2": "npx pm2 start index.ts -i max -f  --interpreter ts-node",
+      "test:workers":"node tests/testWorkers.js",
+      "typeorm": "typeorm-ts-node-commonjs"
+   },
+   "author": "",
+   "license": "ISC",
+   "description": "",
+   "dependencies": {
+      "better-sqlite3": "^11.10.0",
+      "body-parser": "^2.2.2",
+      "dotenv": "^17.4.2",
+      "express": "^5.2.1",
+      "ioredis": "^5.10.1",
+      "pg": "^8.20.0",
+      "reflect-metadata": "^0.2.2",
+      "typeorm": "0.3.30"
+   },
+   "devDependencies": {
+      "@types/express": "^5.0.6",
+      "@types/node": "^16.18.126",
+      "loadtest": "^8.2.1",
+      "pm2": "^7.0.1",
+      "ts-node": "^10.9.2",
+      "tsx": "^4.22.3",
+      "typescript": "^5.9.3"
+   }
+}

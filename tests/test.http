@@ -1,0 +1,9 @@
+
+### words
+POST http://localhost:5000/events/1/purchase/
+Content-Type: application/json
+
+{
+    "userId": 1,
+    "seatId": 1
+}
